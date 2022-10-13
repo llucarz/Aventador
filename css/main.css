@@ -1,0 +1,411 @@
+:root {
+    --navbar-background-color: rgb(10, 12, 19);
+    --navbar-item-hovered-color: rgb(8, 9, 14);
+    --navbar-separator-color: rgb(8, 10, 15);
+    --navbar-icon-color: #ffffff;
+    --navbar-text-color: white;
+    --navbar-transition-speed: .2s;
+    --primary-color: #7C4DFF;
+    --navbar-logo-background-color: rgb(8, 9, 14);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro';
+    font-size: 16px;
+    background-color: #0c0f18;
+    color: white;
+    z-index: 1;
+}
+
+main {
+    padding: 1rem 4rem;
+    margin-left: 5rem;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: #9F6;
+}
+
+body,
+#slider,
+.wrap,
+.slide-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/** HOME **/
+
+.home-box {
+    margin-top: 5rem;
+    max-width: 810px;
+    margin-bottom: 150px;
+    margin-left: 100px;
+    z-index: 2;
+}
+
+.home-box-text {
+    display: flex;
+    position: relative;
+    border-top: 1px solid white;
+    padding-top: 48px;
+    border-bottom: 1px solid white;
+    padding-bottom: 48px;
+    flex-direction: column;
+}
+
+.home-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.home-text {
+    font-size: 25px;
+    margin-right: 20px;
+    padding: 30px 40px;
+    max-width: 505px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mb-15 {
+    margin-bottom: 1.5rem!important
+}
+
+.img-text {
+    text-align: center;
+}
+
+.img-text-1 {
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    left: 50px;
+}
+
+.circle {
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.intro-circle-1 {
+    left: -20px;
+    top: -10px;
+}
+
+.intro-circle-2 {
+    right: -20px;
+    top: -10px;
+    left: auto;
+}
+
+.intro-circle-3 {
+    right: -20px;
+    bottom: -10px;
+    left: auto;
+}
+
+.intro-circle-4 {
+    left: -20px;
+    bottom: -10px;
+}
+
+@media (max-width: 600px) {
+    .intro-left {
+        margin-right: 0;
+        margin-bottom: 20px;
+        max-width: none;
+        width: 100%;
+    }
+    .intro-img-2 {
+        width: 48%;
+    }
+}
+
+@media (max-width: 834px) {
+    .intro-left {
+        width: 65%;
+    }
+    .intro-right {
+        width: 35%;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-left {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/**  BACKGROUND  **/
+
+video.bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+}
+
+
+/** MASTHEAD **/
+
+.masthead {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+}
+
+.masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 992px) {
+    .masthead {
+        height: 100%;
+        width: 75vw;
+        min-height: 0;
+        padding-bottom: 0;
+    }
+    .masthead:before {
+        transform: skewX(-9deg);
+        transform-origin: top right;
+    }
+    .masthead .masthead-content {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 2rem;
+        padding-right: 9rem;
+    }
+    .masthead .masthead-content h1 {
+        font-size: 3.5rem;
+    }
+    .masthead .masthead-content p {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .masthead {
+        width: 65vw;
+    }
+}
+
+
+/** NAVBAR **/
+
+.navbar {
+    width: 5rem;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: var(--navbar-background-color);
+    box-shadow: rgba(12, 43, 30, 0.2) 0 4px 14px;
+    transition: width var(--navbar-transition-speed) ease;
+    z-index: 100;
+}
+
+.navbar:hover {
+    width: 15rem;
+}
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-item {
+    width: 100%;
+    border-bottom: solid 1px var(--navbar-separator-color);
+    transition: background-color var(--navbar-transition-speed);
+}
+
+.navbar-item:hover {
+    background-color: var(--navbar-item-hovered-color);
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 5rem;
+    width: 100%;
+    text-decoration: none;
+}
+
+.navbar-icon {
+    text-align: center;
+    font-size: 1.5rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    color: var(--navbar-icon-color);
+    transition: var(--navbar-transition-speed);
+}
+
+.navbar-item:hover .navbar-icon {
+    color: var(--primary-color);
+}
+
+.navbar-title {
+    color: var(--navbar-text-color)
+}
+
+.navbar:not(:hover) .navbar-title {
+    display: none;
+}
+
+.logo {
+    background: var(--navbar-logo-background-color);
+}
+
+.logo .navbar-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+.navbar:hover .logo .navbar-icon {
+    transform: rotate(180deg);
+}
+
+@media only screen and (max-width:1024px) {
+    .navbar {
+        top: auto;
+        width: 100%;
+        bottom: 0px;
+    }
+    .navbar:hover {
+        width: 100%;
+    }
+    .navbar-menu {
+        flex-direction: row;
+    }
+    .logo {
+        display: none;
+    }
+    main {
+        margin-left: 0;
+        margin-bottom: 5rem;
+    }
+    .navbar:hover .navbar-title {
+        display: none;
+    }
+    .navbar-icon {
+        min-width: auto;
+        margin: 0;
+    }
+    .navbar-link {
+        justify-content: center;
+    }
+}
+
+
+/** VISUEL **/
+
+.wrap {
+    position: relative
+}
+
+.slide {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.slide1 {
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/Ultimae/gallery/aven_ultimae_01.jpg')
+}
+
+.slide2 {
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/Ultimae/gallery/aven_ultimae_02.jpg')
+}
+
+.slide3 {
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/Ultimae/gallery/aven_ultimae_03.jpg')
+}
+
+.slide4 {
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/Ultimae/gallery/aven_ultimae_04.jpg')
+}
+
+.slide5 {
+    background-image: url('https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_detail/aventador/Ultimae/gallery/aven_ultimae_05.jpg')
+}
+
+.arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: -35px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+#left {
+    border-width: 30px 40px 30px 0;
+    border-color: transparent white transparent transparent;
+    left: 0;
+    margin-left: 120px;
+}
+
+#right {
+    border-width: 30px 0 30px 40px;
+    border-color: transparent transparent transparent white;
+    right: 0;
+    margin-right: 60px;
+}
